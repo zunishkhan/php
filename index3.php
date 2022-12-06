@@ -17,11 +17,20 @@
     //         echo "Your lavourite language is neither C++,PHP-8,Javascript nor xml ";
     // } 
 
-    $n = 1;
-    while($n <= 10){
-        echo("the number is $n <br/>");
-        $n++;
-    }
+//     $n = 1;
+//     while($n <= 10){
+//         echo("the number is $n <br/>");
+//         $n++;
+//     }
+//     $n = 15;
+//     do{
+//         echo("this number is $n <br/>");
+//         $n++;
+//     }while($n <= 20);
+ // for($n=1 ; $n=10 ; $n++);
+    // {
+    //     echo("this number is $n <br/>");
+    // }
    ?>
 
 
