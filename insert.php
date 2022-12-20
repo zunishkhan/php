@@ -1,6 +1,28 @@
 <?php
-$field_Error_Name = "";
-$fi
+include('dbconfig.php');
+if(isset($_POST['submit'])){
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+  $insert = "INSERT INTO 'userdata'('user_name', 'user_email', 'user_password') VALUES ('$name', '$email','$password')";
+  $result = $conn=>query($insert);
+
+  if($result ==true){
+    ?>
+   <script>
+   window.alert("your data has been successfully entered"); 
+   </script>
+ <?php
+  }else{
+    ?>
+    <script>
+      window.alert("failed to add data");
+    </script>
+    <?php
+  }
+
+}
 ?>
 
 
