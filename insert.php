@@ -1,17 +1,20 @@
+
 <?php
 include('config.php');
 if(isset($_POST['submit'])){
   $name = $_POST['name'];
   $email = $_POST['email'];
-  $password = $_POST['password'];
+  $password = $_POST['pass'];
 
-  $insert = "INSERT INTO 'userdata'('user_name', 'user_email', 'user_password') VALUES ('$name', '$email','$password')";
-  $result = $conn=>query($insert);
+  $insert = "INSERT INTO 'php_crud'('user_name', 'user_email', 'user_password') VALUES ('$name', '$email','$password')";
+ 
+  $result = $conn->query($insert);
 
-  if($result ==true){
+  if($result == true){
     ?>
    <script>
    window.alert("your data has been successfully entered"); 
+   window.location.assign('index.php');
    </script>
  <?php
   }else{
@@ -59,23 +62,19 @@ if(isset($_POST['submit'])){
 <body>
     <center>
     <div class="container">
-     <form action="insert.php" method="post">
-     <label for="">name</label>
-     <input type="text" class="form-control" name="name">
-     <br><br>
-     <label for="">email</label>
-     <input type="text" class="form-control" name="name">
-     <br><br>
-     <label for="">password</label>
-     <input type="password" class="form-control" name="name">
-     <br><br>
-     <input type="submit" name="submit" class="btn btn-info" value="insert Data">
-
-
-
-
-     </form>
-    </div>
+      <form action="insert.php" method="POST">
+        <h1 style="text-align: center;">PHP CRUD</h1>
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Enter Your Name" class="form-control">
+            <br>
+           <input type="email" name="email" placeholder="Enter Your Email" class="form-control">
+             <br>
+            <input type="password" name="pass" placeholder="Enter Your Password" class="form-control">
+             <br>
+             <input type="submit" class="btn btn-success" name="submit" value="Insert Data">
+            </div>
+        </form>
+      </div>
     </center>
 </body>
 </html>
